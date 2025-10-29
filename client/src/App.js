@@ -1,41 +1,55 @@
-import React, { useEffect } from 'react';
-import './App.css';
+"use client"
+
+import { useEffect } from "react"
+import "./App.css"
 
 function App() {
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible")
+          }
+        })
+      },
+      {
+        threshold: 0.1,
+      },
+    )
 
-    // Observe all sections
-    document.querySelectorAll('section').forEach(section => {
-      observer.observe(section);
-    });
+    document.querySelectorAll("section").forEach((section) => {
+      observer.observe(section)
+    })
 
-    return () => observer.disconnect();
-  }, []);
+    return () => observer.disconnect()
+  }, [])
 
   const scrollToProjects = () => {
-    const projectsSection = document.getElementById('projects');
-    projectsSection.scrollIntoView({ behavior: 'smooth' });
-  };
+    const projectsSection = document.getElementById("projects")
+    projectsSection.scrollIntoView({ behavior: "smooth" })
+  }
 
   return (
     <div className="App">
       <nav className="navbar">
         <div className="nav-content">
           <ul className="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#skills">Skills</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#contact">Contacts</a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -43,12 +57,14 @@ function App() {
       <section id="home" className="hero">
         <div className="hero-content">
           <div className="hero-text">
-            <h1>Hi, I'm <span className="highlight">Keneith Forro</span></h1>
+            <h1>
+              Hi, I'm <span className="highlight">Keneith Forro</span>
+            </h1>
             <p className="subtitle">Frontend Developer/Backend Developer</p>
-            <p className="description">
-             
-            </p>
-            <button className="cta-button" onClick={scrollToProjects}>View My Work</button>
+            <p className="description"></p>
+            <button className="cta-button" onClick={scrollToProjects}>
+              View My Work
+            </button>
           </div>
           <div className="hero-image">
             <img src="pongz.png" alt="Keneith Forro" />
@@ -61,20 +77,20 @@ function App() {
         <div className="about-content">
           <div className="about-text">
             <p>
-              Im a passionate developer with the love of creating, designing and developing applications.
-              I have the ability to adapt in every working environment and I'm always looking for new challenges.
-              I can learn new technologies quickly and can adapt to it without any problems.
-              I excel with the frontend coding and can work well with the backend coding as well.
-              Besides programming, I also work as a freelancer photographer which is one of my passions.
+              I'm a passionate developer with the love of creating, designing and developing applications. I have the
+              ability to adapt in every working environment and I'm always looking for new challenges. I can learn new
+              technologies quickly and can adapt to it without any problems. I excel with the frontend coding and can
+              work well with the backend coding as well. Besides programming, I also work as a freelancer photographer
+              which is one of my passions.
             </p>
           </div>
           <div className="about-stats">
             <div className="stat">
-              <h3>1</h3>
+              <h3>2</h3>
               <p>Years Experience</p>
             </div>
             <div className="stat">
-              <h3>3</h3>
+              <h3>5</h3>
               <p>Projects Completed</p>
             </div>
           </div>
@@ -93,7 +109,7 @@ function App() {
                   <span>40%</span>
                 </div>
                 <div className="progress-bar">
-                  <div className="progress" style={{ width: '40%' }}></div>
+                  <div className="progress" style={{ width: "40%" }}></div>
                 </div>
               </div>
               <div className="skill-item">
@@ -102,16 +118,25 @@ function App() {
                   <span>40%</span>
                 </div>
                 <div className="progress-bar">
-                  <div className="progress" style={{ width: '40%' }}></div>
+                  <div className="progress" style={{ width: "40%" }}></div>
                 </div>
               </div>
               <div className="skill-item">
                 <div className="skill-info">
                   <span>HTML/CSS</span>
-                  <span>65%</span>
+                  <span>80%</span>
                 </div>
                 <div className="progress-bar">
-                  <div className="progress" style={{ width: '65%' }}></div>
+                  <div className="progress" style={{ width: "80%" }}></div>
+                </div>
+              </div>
+                <div className="skill-item">
+                <div className="skill-info">
+                <span>Dart</span>
+                <span>10%</span>
+                </div>
+                <div className="progress-bar">
+                  <div className="progress" style={{ width: "10%" }}></div>
                 </div>
               </div>
             </div>
@@ -125,7 +150,7 @@ function App() {
                   <span>30%</span>
                 </div>
                 <div className="progress-bar">
-                  <div className="progress" style={{ width: '30%' }}></div>
+                  <div className="progress" style={{ width: "30%" }}></div>
                 </div>
               </div>
               <div className="skill-item">
@@ -134,25 +159,34 @@ function App() {
                   <span>20%</span>
                 </div>
                 <div className="progress-bar">
-                  <div className="progress" style={{ width: '20%' }}></div>
+                  <div className="progress" style={{ width: "20%" }}></div>
                 </div>
               </div>
               <div className="skill-item">
                 <div className="skill-info">
                   <span>PHP</span>
-                  <span>50%</span>
+                  <span>60%</span>
                 </div>
                 <div className="progress-bar">
-                  <div className="progress" style={{ width: '50%' }}></div>
+                  <div className="progress" style={{ width: "60%" }}></div>
                 </div>
               </div>
               <div className="skill-item">
                 <div className="skill-info">
                   <span>MySQL</span>
-                  <span>50%</span>
+                  <span>70%</span>
                 </div>
                 <div className="progress-bar">
-                  <div className="progress" style={{ width: '50%' }}></div>
+                  <div className="progress" style={{ width: "70%" }}></div>
+                </div>
+              </div>
+              <div className="skill-item">
+                <div className="skill-info">
+                  <span>Firebase Firestore</span>
+                  <span>10%</span>
+                </div>
+                <div className="progress-bar">
+                  <div className="progress" style={{ width: "10%" }}></div>
                 </div>
               </div>
             </div>
@@ -166,7 +200,7 @@ function App() {
                   <span>45%</span>
                 </div>
                 <div className="progress-bar">
-                  <div className="progress" style={{ width: '45%' }}></div>
+                  <div className="progress" style={{ width: "45%" }}></div>
                 </div>
               </div>
               <div className="skill-item">
@@ -175,7 +209,7 @@ function App() {
                   <span>80%</span>
                 </div>
                 <div className="progress-bar">
-                  <div className="progress" style={{ width: '80%' }}></div>
+                  <div className="progress" style={{ width: "80%" }}></div>
                 </div>
               </div>
               <div className="skill-item">
@@ -184,7 +218,7 @@ function App() {
                   <span>70%</span>
                 </div>
                 <div className="progress-bar">
-                  <div className="progress" style={{ width: '70%' }}></div>
+                  <div className="progress" style={{ width: "70%" }}></div>
                 </div>
               </div>
             </div>
@@ -209,10 +243,17 @@ function App() {
             </div>
             <div className="project-content">
               <h3>LaLiga Esport</h3>
-              <p>A website about esports help the players and users to find, create and join teams that can be used to join local esports tournaments. This website can be also used to buy electronics items</p>
+              <p>
+                A website about esports helps the players and users to find, create and join teams that can be used to
+                join local esports tournaments. This website can be also used to buy electronics items.
+              </p>
               <div className="project-links">
-                <a href="#" className="project-link">View Live</a>
-                <a href="#" className="project-link">GitHub</a>
+                <a href="#" className="project-link">
+                  View Live
+                </a>
+                <a href="#" className="project-link">
+                  GitHub
+                </a>
               </div>
             </div>
           </div>
@@ -221,20 +262,26 @@ function App() {
               <img src="boteco.png" alt="Boteco Project" />
               <div className="project-overlay">
                 <div className="project-tech">
-                <span>MongoDB</span>
+                  <span>MongoDB</span>
                   <span>Express</span>
                   <span>Node.js</span>
                   <span>React</span>
-                
                 </div>
               </div>
             </div>
             <div className="project-content">
               <h3>Boteco</h3>
-              <p>A web application that help the environment by picking up bottles that can be converted into points and can be redeemed for rewards.</p>
+              <p>
+                A web application that helps the environment by picking up bottles that can be converted into points and
+                can be redeemed for rewards.
+              </p>
               <div className="project-links">
-                <a href="#" className="project-link">View Live</a>
-                <a href="#" className="project-link">GitHub</a>
+                <a href="#" className="project-link">
+                  View Live
+                </a>
+                <a href="#" className="project-link">
+                  GitHub
+                </a>
               </div>
             </div>
           </div>
@@ -252,10 +299,70 @@ function App() {
             </div>
             <div className="project-content">
               <h3>StayIn</h3>
-              <p>About a wesbite that help the peoples to find a hotel to stay in a specific city and can be used to book a hotel room.</p>
+              <p>
+                A website that helps people find a hotel to stay in a specific city and can be used to book a hotel
+                room.
+              </p>
               <div className="project-links">
-                <a href="#" className="project-link">View Live</a>
-                <a href="#" className="project-link">GitHub</a>
+                <a href="#" className="project-link">
+                  View Live
+                </a>
+                <a href="#" className="project-link">
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="project-card">
+            <div className="project-image">
+              <img src="carsadalogo.jpg" alt="Carsada Project" />
+              <div className="project-overlay">
+                <div className="project-tech">
+                  <span>Dart</span>
+                  <span>Firebase Firestore</span>
+                  <span>Flutter</span>
+                </div>
+              </div>
+            </div>
+            <div className="project-content">
+              <h3>Carsada</h3>
+              <p>
+                An application that assisting commuters in their travels within iloilo city. It tracks jeepney routes that connects to where the user wants to go. With a few simple clicks the user can immediately find the right route for their travels .
+              </p>
+              <div className="project-links">
+                <a href="https://github.com/kyynett123/carsadawebsite" className="project-link">
+                  View Live
+                </a>
+                <a href="https://carsadaapp.vercel.app/" className="project-link">
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="project-card">
+            <div className="project-image">
+              <img src="HYPEUP!.png" alt="HypeUp! Project" />
+              <div className="project-overlay">
+                <div className="project-tech">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>PHP</span>
+                  <span>SQL</span>
+                </div>
+              </div>
+            </div>
+            <div className="project-content">
+              <h3>HypeUP!</h3>
+              <p>
+                A website that help the people to book a upcoming concert tickets that help them to determine the exact price of the tickets.
+              </p>
+              <div className="project-links">
+                <a href="#" className="project-link">
+                  View Live
+                </a>
+                <a href="https://github.com/ztan-sh/ticketbooking" className="project-link">
+                  GitHub
+                </a>
               </div>
             </div>
           </div>
@@ -263,13 +370,15 @@ function App() {
       </section>
 
       <section id="contact" className="contact">
-        <h2>Get In Touch</h2>
+        <h2>Contacts</h2>
         <div className="contact-content">
           <form className="contact-form">
             <input type="text" placeholder="Name" />
             <input type="email" placeholder="Email" />
             <textarea placeholder="Message"></textarea>
-            <button type="submit" className="submit-button">Send Message</button>
+            <button type="submit" className="submit-button">
+              Send Message
+            </button>
           </form>
           <div className="contact-info">
             <div className="contact-item">
@@ -294,11 +403,9 @@ function App() {
         </div>
       </section>
 
-      <footer className="footer">
-
-      </footer>
+      <footer className="footer"></footer>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
