@@ -63,7 +63,7 @@ function App() {
             <p className="subtitle">Frontend Developer/Backend Developer</p>
             <p className="description"></p>
             <button className="cta-button" onClick={scrollToProjects}>
-              View My Work
+              View My Works
             </button>
           </div>
           <div className="hero-image">
@@ -86,7 +86,7 @@ function App() {
           </div>
           <div className="about-stats">
             <div className="stat">
-              <h3>2</h3>
+              <h3>3</h3>
               <p>Years Experience</p>
             </div>
             <div className="stat">
